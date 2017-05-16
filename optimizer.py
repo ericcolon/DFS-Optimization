@@ -5,7 +5,7 @@ Created on Tue Mar 28 12:08:02 2017
 @author: tpauley
 """
 #set number of lineups to generate
-num_lineups = 20
+num_lineups = 5
 
 user_id = 'talktotfp'
 session_id = 'abc12345'
