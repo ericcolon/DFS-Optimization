@@ -10,7 +10,7 @@ num_lineups = 5
 user_id = 'talktotfp'
 session_id = 'abc12345'
 #set point difference in lineups
-point_gap = .001
+point_gap = .025
 
 import pulp
 import sqlalchemy
@@ -60,7 +60,7 @@ CASE WHEN POS = 5 then 1 else 0 end as C,
 TO_NUMBER(FDP) as ADJ_MOD1_PCT_DIFF,TO_NUMBER(FDP) as ADJ_MOD1_REAL_DIFF,
 1 as LOCK_EX
 from GLOG_SALARY
-where gdate = TO_DATE('15-APR-17','dd-mon-yy')
+where gdate = TO_DATE('11-APR-17','dd-mon-yy')
 and FDP is NOT NULL
 and FDS is NOT NULL
 and GURU_ID IN (select PLAYER_ID from WEB_FD_LOCK_EX_LIST where USER_ID = '%s' and LOCK_EX = 1)
@@ -74,7 +74,7 @@ CASE WHEN POS = 5 then 1 else 0 end as C,
 TO_NUMBER(FDP) as ADJ_MOD1_PCT_DIFF,TO_NUMBER(FDP) as ADJ_MOD1_REAL_DIFF,
 0 as LOCK_EX
 from GLOG_SALARY
-where gdate = TO_DATE('15-APR-17','dd-mon-yy')
+where gdate = TO_DATE('11-APR-17','dd-mon-yy')
 and FDP is NOT NULL
 and FDS is NOT NULL
 and GURU_ID not IN (select PLAYER_ID from WEB_FD_LOCK_EX_LIST where USER_ID = '%s')""" % (user_id,user_id)
